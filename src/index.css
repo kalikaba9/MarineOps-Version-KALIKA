@@ -1,0 +1,49 @@
+@import "tailwindcss";
+ 
+ * html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.btnHero {
+   background-color: #000080; 
+}
+
+.btnHero:hover {
+    background-color: #000080;
+    color: white;
+}
+
+.tet {
+     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    box-shadow: 5px;
+    color: black;
+    font-weight: 600;
+}
+
+.tete {
+     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    box-shadow: 5px;
+    color: black;
+    font-weight: 600;
+}
+
+.apropos-page {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.tetValeur {
+     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    box-shadow: 5px;
+    color: white;
+    font-weight: 600;
+}
+
+.teteValeur {
+     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    box-shadow: 5px;
+    color: white;
+    font-weight: 600;
+}
