@@ -81,7 +81,10 @@ export default function CatalogueServices() {
             Catalogue de Services
           </h1>
           <p className="text-gray-600 text-lg">
-            Sélectionnez les services dont vous avez besoin pour votre bateau
+            Ne laissez pas un manque de ravitaillement mettre votre équipage en danger.
+          </p>
+          <p className="text-gray-600 text-lg">
+            Sélectionnez les services dont vous avez besoin pour votre bateau.
           </p>
         </div>
       <div className="max-w-[1100px] mx-auto">
