@@ -2,65 +2,67 @@
 import React, { useState } from 'react';
 import { Search, ChevronDown, Plus } from 'lucide-react';
 import Navbar from './Navbar';
+import { useTranslation } from 'react-i18next';
 
 export default function CatalogueServices() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Toutes catégories');
+  const { t } = useTranslation();
 
   const services = [
     {
       id: 1,
       image: '/image/1.jpg',
-      title: 'Maintenance Générale',
-      category: 'Maintenance',
-      description: 'Inspection et entretien du navire',
+      title: t('service.generalMaintenance'),
+      category: t('services.maintenance'),
+      description: t('service.generalMaintenance.desc'),
       price: '350€',
-      unit: '/ intervention'
+      unit: t('unit.intervention')
     },
     {
       id: 2,
       image: '/image/3.jpg',
-      title: 'Eau Potable',
-      category: 'Ravitaillement',
-      description: 'Eau potable traitée et contrôlée',
+      title: t('service.water'),
+      category: t('services.supply'),
+      description: t('service.water.desc'),
       price: '3.5€',
-      unit: '/ tonne'
+      unit: t('unit.ton')
     },
     {
       id: 3,
       image: '/image/2.jpg',
-      title: 'Réparation Électrique',
-      category: 'Maintenance',
-      description: 'Réparation systèmes électriques et électroniques',
+      title: t('service.electrical'),
+      category: t('services.maintenance'),
+      description: t('service.electrical.desc'),
       price: '180€',
-      unit: '/ heure'
+      unit: t('unit.hour')
     },
     {
       id: 4,
       image: '/image/4.jpg',
-      title: 'Ravitaillement Alimentaire',
-      category: 'Ravitaillement',
-      description: 'Provisions alimentaires fraîches et sèches',
+      title: t('service.food'),
+      category: t('services.supply'),
+      description: t('service.food.desc'),
       price: '250€',
-      unit: '/ commande'
+      unit: t('unit.order')
     },
     {
       id: 5,
       image: '/image/5.jpg',
-      title: 'Carburant Maritime',
-      category: 'Ravitaillement',
-      description: 'Diesel et essence marine de qualité',
+      title: t('service.fuel'),
+      category: t('services.supply'),
+      description: t('service.fuel.desc'),
       price: '1.45€',
-      unit: '/ litre'
+      unit: t('unit.liter')
     },
     {
       id: 6,
       image: '/image/6.jpg',
-      title: 'Transport Équipage',
-      category: 'Transport',
-      description: 'Navette port - ville - aéroport',
+      title: t('service.crew'),
+      category: t('services.transport'),
+      description: t('service.crew.desc'),
       price: '45€',
-      unit: '/ trajet'
+      unit: t('unit.trip')
     }
   ];
 
@@ -78,13 +80,13 @@ export default function CatalogueServices() {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-3">
-            Catalogue de Services
+            {t('services.title')}
           </h1>
           <p className="text-gray-600 text-lg">
-            Ne laissez pas un manque de ravitaillement mettre votre équipage en danger.
+            {t('services.subtitle1')}
           </p>
           <p className="text-gray-600 text-lg">
-            Sélectionnez les services dont vous avez besoin pour votre bateau.
+            {t('services.subtitle2')}
           </p>
         </div>
       <div className="max-w-[1100px] mx-auto">
@@ -94,7 +96,7 @@ export default function CatalogueServices() {
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="Rechercher un service..."
+              placeholder={t('services.search')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-12 pr-4 py-3 bg-gray-50 border-0 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#000080]"
@@ -106,10 +108,10 @@ export default function CatalogueServices() {
               onChange={(e) => setSelectedCategory(e.target.value)}
               className="w-full appearance-none px-4 py-3 bg-white border border-[#000080] rounded-xl text-[#000080] focus:outline-none focus:ring-2 focus:ring-[#000080] cursor-pointer"
             >
-              <option>Toutes catégories</option>
-              <option>Maintenance</option>
-              <option>Ravitaillement</option>
-              <option>Transport</option>
+              <option>{t('services.allCategories')}</option>
+              <option>{t('services.maintenance')}</option>
+              <option>{t('services.supply')}</option>
+              <option>{t('services.transport')}</option>
             </select>
             <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
           </div>
@@ -160,7 +162,7 @@ export default function CatalogueServices() {
                     style={{ backgroundColor: '#000080' }}
                   >
                     <Plus className="w-5 h-5" />
-                    Ajouter
+                    {t('services.add')}
                   </button>
                 </div>
               </div>

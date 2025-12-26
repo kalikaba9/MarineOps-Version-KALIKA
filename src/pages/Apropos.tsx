@@ -1,23 +1,26 @@
 import React from 'react';
 import { CheckCircle, Globe , Shield, Zap, Users } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../Composants/Navbar';
 
 export default function Apropos() {
+  const { t } = useTranslation();
+
 const valeurs = [
     {
       icon: Shield,
-      title: "Fiabilité",
-      description: "Des services vérifiés et un contrôle qualité rigoureux"
+      title: t('about.values.reliability'),
+      description: t('about.values.reliability.desc')
     },
     {
       icon: Zap,
-      title: "Efficacité",
-      description: "Une plateforme intuitive pour gagner du temps"
+      title: t('about.values.efficiency'),
+      description: t('about.values.efficiency.desc')
     },
     {
       icon: Users,
-      title: "Transparence",
-      description: "Traçabilité totale et facturation centralisée"
+      title: t('about.values.transparency'),
+      description: t('about.values.transparency.desc')
     }
   ];
 
@@ -30,10 +33,10 @@ const valeurs = [
         {/* Section Header */}  
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-3xl tet mb-4">
-            À propos de MarineOps
+            {t('about.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Une plateforme innovante dédiée à l'optimisation logistique maritime
+            {t('about.subtitle')}
           </p>
         </div>
         {/* Content Grid */}
@@ -44,20 +47,20 @@ const valeurs = [
             <div className="bg-white rounded-2xl p-8 shadow-sm flex-1 flex flex-col" style={{ borderLeft: '4px solid #000080' }}>
               <div className="flex items-center gap-3 mb-6">
                 <CheckCircle className="w-8 h-8" style={{ color: '#000080' }} />
-                <h3 className="text-xl font-bold tete">Notre Mission</h3>
+                <h3 className="text-xl font-bold tete">{t('about.mission.title')}</h3>
               </div>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Révolutionner les services maritimes en offrant aux équipages une plateforme centralisée, simple et efficace pour commander tous leurs besoins à terre. Nous éliminons les intermédiaires et garantissons qualité et transparence.
+                {t('about.mission.desc')}
               </p>
             </div>
             {/* Notre Vision Card */}
             <div className="bg-white rounded-2xl p-8 shadow-sm flex-1 flex flex-col" style={{ borderLeft: '4px solid #000080' }}>
               <div className="flex items-center gap-3 mb-6">
                 <Globe className="w-8 h-8" style={{ color: '#000080' }} />
-                <h3 className="text-xl font-bold tete">Notre Vision</h3>
+                <h3 className="text-xl font-bold tete">{t('about.vision.title')}</h3>
               </div>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Devenir la référence mondiale en matière de services maritimes digitalisés, en connectant équipages et prestataires à travers un écosystème transparent et efficace.
+                {t('about.vision.desc')}
               </p>
             </div>
           </div>
@@ -79,7 +82,7 @@ const valeurs = [
      <div className="min-h-screen flex items-center justify-center p-8">
       <div className="w-full max-w-[1000px] rounded-3xl p-12" style={{ background: 'linear-gradient(135deg, #1a1a3e 0%, #000080 50%, #2a2a6e 100%)' }}>
         <h1 className="text-center text-4xl md:text-3xl tetValeur mb-20">
-          Nos Valeurs
+          {t('about.values.title')}
         </h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -111,7 +114,7 @@ const valeurs = [
         
         {/* Titre */}
         <h2 className="text-4xl md:text-3xl tet text-center mb-12">
-          Comment ça marche ?
+          {t('about.howItWorks.title')}
         </h2>
 
         {/* Grid */}
@@ -122,9 +125,9 @@ const valeurs = [
             <div className="w-16 h-16 bg-[#000080] rounded-full flex items-center justify-center">
               <span className="text-white text-xl font-semibold">1</span>
             </div>
-            <h3 className="text-xl font-bold tete">Parcourez</h3>
+            <h3 className="text-xl font-bold tete">{t('about.step1.title')}</h3>
             <p className="text-gray-600">
-              Explorez notre catalogue de<br />services
+              {t('about.step1.desc')}
             </p>
           </div>
 
@@ -133,9 +136,9 @@ const valeurs = [
             <div className="w-16 h-16 bg-[#000080] rounded-full flex items-center justify-center">
               <span className="text-white text-xl font-semibold">2</span>
             </div>
-            <h3 className="text-xl font-bold tete">Commandez</h3>
+            <h3 className="text-xl font-bold tete">{t('about.step2.title')}</h3>
             <p className="text-gray-600">
-              Ajoutez au panier et validez
+              {t('about.step2.desc')}
             </p>
           </div>
 
@@ -144,9 +147,9 @@ const valeurs = [
             <div className="w-16 h-16 bg-[#000080] rounded-full flex items-center justify-center">
               <span className="text-white text-xl font-semibold">3</span>
             </div>
-            <h3 className="text-xl font-bold tete">Suivez</h3>
+            <h3 className="text-xl font-bold tete">{t('about.step3.title')}</h3>
             <p className="text-gray-600">
-              Suivi en temps réel de votre<br />commande
+              {t('about.step3.desc')}
             </p>
           </div>
 
@@ -155,9 +158,9 @@ const valeurs = [
             <div className="w-16 h-16 bg-[#000080] rounded-full flex items-center justify-center">
               <span className="text-white text-xl font-semibold">4</span>
             </div>
-            <h3 className="text-xl font-bold tete">Recevez</h3>
+            <h3 className="text-xl font-bold tete">{t('about.step4.title')}</h3>
             <p className="text-gray-600">
-              Livraison au port à la date choisie
+              {t('about.step4.desc')}
             </p>
           </div>
 

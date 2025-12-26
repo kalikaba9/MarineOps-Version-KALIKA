@@ -36,7 +36,7 @@ const resources = {
 
       // CTA Section
       "cta.title": "Prêt à simplifier vos opérations ?",
-      "cta.subtitle": "Rejoignez les équipages qui font confiance à MarineOps pour leurs services maritimes.",
+      "cta.subtitle": "Rejoignez les équipages qui font confiance à Bly Market pour leurs services maritimes.",
       "cta.button": "Commencer maintenant",
 
       // Services
@@ -105,7 +105,7 @@ const resources = {
       "contact.form.success": "Message envoyé avec succès",
 
       // About
-      "about.title": "À propos de MarineOps",
+      "about.title": "À propos de Bly Market",
       "about.subtitle": "Une plateforme innovante dédiée à l'optimisation logistique maritime",
       "about.mission.title": "Notre Mission",
       "about.mission.desc": "Révolutionner les services maritimes en offrant aux équipages une plateforme centralisée, simple et efficace pour commander tous leurs besoins à terre. Nous éliminons les intermédiaires et garantissons qualité et transparence.",
@@ -161,7 +161,7 @@ const resources = {
 
       // CTA Section
       "cta.title": "Ready to simplify your operations?",
-      "cta.subtitle": "Join the crews who trust MarineOps for their maritime services.",
+      "cta.subtitle": "Join the crews who trust Bly Market for their maritime services.",
       "cta.button": "Get started now",
 
       // Services
@@ -230,7 +230,7 @@ const resources = {
       "contact.form.success": "Message sent successfully",
 
       // About
-      "about.title": "About MarineOps",
+      "about.title": "About Bly Market",
       "about.subtitle": "An innovative platform dedicated to maritime logistics optimization",
       "about.mission.title": "Our Mission",
       "about.mission.desc": "Revolutionize maritime services by offering crews a centralized, simple and efficient platform to order all their needs on land. We eliminate intermediaries and guarantee quality and transparency.",

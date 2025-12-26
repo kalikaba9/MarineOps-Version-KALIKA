@@ -1,6 +1,7 @@
 import { useState, ChangeEvent } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import Navbar from './Navbar';
+import { useTranslation } from 'react-i18next';
 
 interface FormData {
   subject: string;
@@ -22,6 +23,7 @@ export default function Contact() {
   });
   const [status, setStatus] = useState<Status>({ type: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useTranslation();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -76,10 +78,10 @@ export default function Contact() {
   {/* Header */}
   <div className="mb-12 pt-16">
     <h1 className="text-center text-4xl md:text-3xl tet mb-4">
-      Contactez-nous
+      {t('contact.title')}
     </h1>
     <p className="text-gray-600 text-lg text-center">
-      Notre équipe est à votre disposition 24/7 pour répondre à toutes vos questions.
+      {t('contact.subtitle')}
     </p>
   </div>
 
@@ -89,8 +91,8 @@ export default function Contact() {
     <div className="flex-1 flex flex-col gap-8">
       {/* Contact Information */}
       <div className="bg-white border border-gray-200 rounded-2xl p-8 flex-1">
-        <h2 className="text-xl font-bold tete mb-2">Informations de contact</h2>
-        <p className="text-gray-600 mb-8">Plusieurs moyens de nous joindre</p>
+        <h2 className="text-xl font-bold tete mb-2">{t('contact.info.title')}</h2>
+        <p className="text-gray-600 mb-8">{t('contact.info.subtitle')}</p>
 
         <div className="space-y-6">
           <div className="flex items-center gap-4">
@@ -110,51 +112,51 @@ export default function Contact() {
 
       {/* Emergency Support */}
       <div className="bg-white border border-gray-200 rounded-2xl p-8 flex-1">
-        <h2 className="text-xl font-bold tete mb-4">Support d'urgence</h2>
+        <h2 className="text-xl font-bold tete mb-4">{t('contact.emergency.title')}</h2>
         <p className="text-gray-600 leading-relaxed">
-          Pour toute urgence concernant une livraison en cours, veuillez utiliser notre ligne prioritaire disponible dans votre espace commande.
+          {t('contact.emergency.desc')}
         </p>
       </div>
     </div>
 
     {/* Right Column - Contact Form */}
     <div className="flex-1 bg-white border border-gray-200 rounded-2xl p-8 flex flex-col">
-      <h2 className="text-xl font-bold tete mb-2">Envoyez-nous un message</h2>
-      <p className="text-gray-600 mb-8">Remplissez le formulaire ci-dessous</p>
+      <h2 className="text-xl font-bold tete mb-2">{t('contact.form.title')}</h2>
+      <p className="text-gray-600 mb-8">{t('contact.form.subtitle')}</p>
 
       <div className="space-y-6 flex-1">
         {/* Form Elements */}
         <div>
-          <label className="block text-gray-900 font-medium mb-3">Sujet</label>
+          <label className="block text-gray-900 font-medium mb-3">{t('contact.form.subject')}</label>
           <input
             type="text"
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            placeholder="Sujet de votre demande"
+            placeholder={t('contact.form.subject.placeholder')}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
 
         <div>
-          <label className="block text-gray-900 font-medium mb-3">Email</label>
+          <label className="block text-gray-900 font-medium mb-3">{t('contact.form.email')}</label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="votre@email.com"
+            placeholder={t('contact.form.email.placeholder')}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
 
         <div className="flex-1 flex flex-col">
-          <label className="block text-gray-900 font-medium mb-3">Message</label>
+          <label className="block text-gray-900 font-medium mb-3">{t('contact.form.message')}</label>
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Comment pouvons-nous vous aider ?"
+            placeholder={t('contact.form.message.placeholder')}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none flex-1"
           ></textarea>
         </div>
@@ -169,7 +171,7 @@ export default function Contact() {
         onClick={handleSubmit}
         disabled={isSubmitting}
         className="w-full bg-[#000080] text-white py-3.5 rounded-lg font-medium hover:bg-gray-800 transition-colors">
-          Envoyer le message
+          {t('contact.form.submit')}
         </button>
       </div>
     </div>

@@ -2,8 +2,11 @@ import React from 'react';
 import { ShoppingCart } from 'lucide-react';
 import Navbar from '../Composants/Navbar';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function MonPanier() {
+  const { t } = useTranslation();
+
   return (
     <>
     <Navbar/>
@@ -12,8 +15,8 @@ export default function MonPanier() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl md:text-3xl tet mb-2">Mon Panier</h1>
-          <p className="text-gray-600">Vérifiez votre commande avant validation</p>
+          <h1 className="text-4xl md:text-3xl tet mb-2">{t('cart.title')}</h1>
+          <p className="text-gray-600">{t('cart.subtitle')}</p>
         </div>
 
         {/* Empty Cart */}
@@ -26,13 +29,13 @@ export default function MonPanier() {
 
             {/* Empty Message */}
             <h2 className="text-xl font-medium text-gray-900 mb-2">
-              Votre panier est vide
+              {t('cart.empty')}
             </h2>
 
             {/* Browse Button */}
             <Link to="/services">
             <button className="mt-6 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
-              Parcourir les services
+              {t('cart.browse')}
             </button>
             </Link>
           </div>
